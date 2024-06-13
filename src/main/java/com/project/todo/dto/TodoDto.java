@@ -2,7 +2,6 @@ package com.project.todo.dto;
 
 import java.time.ZonedDateTime;
 
-import com.project.todo.model.Categorie;
 import com.project.todo.model.Todo;
 
 import jakarta.validation.constraints.NotEmpty;
@@ -36,7 +35,7 @@ public class TodoDto {
 	private CategorieDto categorie;
 	
 	
-	private static Todo toEntity(TodoDto todoDto) {
+	public static Todo toEntity(TodoDto todoDto) { //request
 		return Todo.builder()
 				.id(todoDto.getId())
 				.title(todoDto.getTitle())
@@ -48,7 +47,16 @@ public class TodoDto {
 				.build();
 	}
 	
-	private static TodoDto fromEntity()
+	public static TodoDto fromEntity(Todo todo) { //response
+		return TodoDto.builder()
+				.id(todo.getId())
+				.title(todo.getTitle())
+				.description(todo.getDescription())
+				.done(todo.isDone())
+				.favorite(todo.isFavorite())
+				.startDate(todo.getStartDate())
+				.build();
+	}
 	
 	
 	
