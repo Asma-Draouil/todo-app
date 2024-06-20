@@ -1,4 +1,4 @@
-package com.project.todo.controllers.api;
+package com.project.todo.controllers;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.project.todo.controllers.api.CategorieApi;
 import com.project.todo.dto.CategorieDto;
 import com.project.todo.dto.TodoDto;
 import com.project.todo.services.CategorieService;
